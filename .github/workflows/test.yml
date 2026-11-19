@@ -1,0 +1,23 @@
+name: Automated Testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Check HTML File
+        run: |
+          echo "Starting Test Cases"
+          test -f index.html
+          echo "Test Case 1 Passed"
+
+      - name: Testing Completed
+        run: echo "All Test Cases Passed Successfully"
